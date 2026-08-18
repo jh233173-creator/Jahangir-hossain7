@@ -3,185 +3,703 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal profile website of Jahangir Alam, Medical Promotional Officer from Assasuni, Satkhira.">
+
   <title>Jahangir Alam | Medical Promotional Officer</title>
+  <meta name="description" content="Professional portfolio of Jahangir Alam, Medical Promotional Officer from Assasuni, Satkhira, Bangladesh.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Arial,Helvetica,sans-serif;
-      color:#102a43;background:#f5f8fc;line-height:1.6
+    :root {
+      --primary: #0b7a75;
+      --primary-dark: #075b57;
+      --accent: #19b5a5;
+      --dark: #102a2a;
+      --text: #536363;
+      --light: #f4fbfa;
+      --white: #ffffff;
+      --border: #dcebea;
+      --shadow: 0 15px 45px rgba(8, 83, 78, 0.10);
     }
-    a{text-decoration:none;color:inherit}
-    .nav{
-      position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);
-      backdrop-filter:blur(10px);border-bottom:1px solid #e6edf5
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    .nav-inner{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:22px;font-weight:800;color:#087f8c}
-    .menu{display:flex;gap:22px;font-size:14px;font-weight:700;color:#486581}
-    .menu a:hover{color:#087f8c}
-    .hero{
-      min-height:78vh;display:flex;align-items:center;
-      background:linear-gradient(135deg,#e8fbfc 0%,#f7fbff 55%,#eaf1ff 100%);
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
     }
-    .container{max-width:1100px;margin:auto;padding:70px 22px}
-    .hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:55px;align-items:center}
-    .badge{display:inline-block;background:#d9f5f5;color:#087f8c;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:18px}
-    h1{font-size:clamp(42px,7vw,72px);line-height:1.05;margin-bottom:18px;letter-spacing:-2px}
-    .role{font-size:24px;color:#087f8c;font-weight:800;margin-bottom:18px}
-    .lead{font-size:18px;color:#52667a;max-width:650px}
-    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{padding:13px 20px;border-radius:12px;font-weight:800;display:inline-block}
-    .primary{background:#087f8c;color:white}
-    .secondary{background:white;border:1px solid #c9d6e2;color:#234}
-    .card{
-      background:white;border:1px solid #e3ebf3;border-radius:24px;padding:30px;
-      box-shadow:0 18px 50px rgba(35,55,80,.08)
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    .profile-card{text-align:center}
-    .avatar{
-      width:150px;height:150px;border-radius:50%;margin:0 auto 18px;
-      display:flex;align-items:center;justify-content:center;
-      background:#087f8c;color:white;font-size:48px;font-weight:800;
-      border:8px solid #e7f8f8
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
     }
-    .profile-card h2{font-size:27px;margin-bottom:5px}
-    .profile-card p{color:#6b7c8f}
-    section{padding:20px 0}
-    .section-title{text-align:center;font-size:34px;margin-bottom:12px}
-    .section-sub{text-align:center;color:#6b7c8f;margin-bottom:38px}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-    .info-list{list-style:none;margin-top:15px}
-    .info-list li{padding:12px 0;border-bottom:1px solid #edf1f5}
-    .info-list strong{display:inline-block;min-width:105px}
-    .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-    .skill{padding:11px 15px;border-radius:12px;background:#eaf7f8;color:#087f8c;font-weight:800}
-    .contact{background:#102a43;color:white}
-    .contact .section-title{color:white}
-    .contact .section-sub{color:#cbd7e2}
-    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .contact-item{background:rgba(255,255,255,.08);padding:22px;border-radius:16px}
-    .contact-item small{display:block;color:#b8c8d7;margin-bottom:5px}
-    footer{text-align:center;padding:24px;color:#708090;background:#fff;font-size:14px}
-    @media(max-width:800px){
-      .menu{display:none}
-      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-      .hero{min-height:auto}
-      .container{padding:55px 18px}
-      h1{font-size:48px}
-      .role{font-size:20px}
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220,235,234,.7);
+    }
+
+    nav {
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--dark);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding-top: 120px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 90% 15%, rgba(25,181,165,.15), transparent 28%),
+        radial-gradient(circle at 10% 90%, rgba(11,122,117,.10), transparent 25%),
+        var(--light);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dff7f4;
+      color: var(--primary-dark);
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.05;
+      color: var(--dark);
+      margin-bottom: 18px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero h2 {
+      font-size: 22px;
+      color: #315454;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 23px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--primary);
+      box-shadow: 0 10px 25px rgba(11,122,117,.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* PROFILE CARD */
+    .profile-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 35px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #dff7f4;
+      top: -80px;
+      right: -70px;
+    }
+
+    .avatar {
+      width: 145px;
+      height: 145px;
+      margin: 10px auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border: 7px solid #e9f8f6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-card h3 {
+      font-size: 24px;
+      color: var(--dark);
+    }
+
+    .profile-card .role {
+      color: var(--primary);
+      font-weight: 600;
+      margin: 5px 0 20px;
+    }
+
+    .location {
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading small {
+      color: var(--primary);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: var(--dark);
+      margin: 8px 0 12px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .card {
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 8px 30px rgba(0,0,0,.04);
+    }
+
+    .card h3 {
+      color: var(--dark);
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 13px 0;
+      border-bottom: 1px solid #edf3f2;
+      gap: 15px;
+    }
+
+    .info-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .info-list strong {
+      color: var(--dark);
+    }
+
+    /* SKILLS */
+    .skills {
+      background: var(--light);
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 28px 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: .3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: #dff7f4;
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .skill-card h3 {
+      color: var(--dark);
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .skill-card p {
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: linear-gradient(135deg, #0b7a75, #075b57);
+      color: white;
+      border-radius: 28px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      box-shadow: 0 20px 50px rgba(7,91,87,.20);
+    }
+
+    .contact-box h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #d9f4f1;
+    }
+
+    .contact-items {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-item {
+      padding: 18px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 13px;
+    }
+
+    .contact-item span {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: .7;
+      margin-bottom: 3px;
+    }
+
+    .contact-item a {
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #082d2c;
+      color: #b9d4d2;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .hero-content,
+      .about-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero-content {
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid var(--border);
+        gap: 18px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+
+      .contact-box {
+        padding: 32px 24px;
+      }
+
+      .contact-box h2 {
+        font-size: 30px;
+      }
+
+      .info-list li {
+        flex-direction: column;
+        gap: 3px;
+      }
     }
   </style>
 </head>
-<body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="logo" href="#home">Jahangir Alam</a>
-      <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <header id="home" class="hero">
+<body>
+
+  <!-- NAVBAR -->
+  <header>
     <div class="container">
-      <div class="hero-grid">
-        <div>
-          <span class="badge">PROFESSIONAL PROFILE</span>
-          <h1>Jahangir Alam</h1>
-          <div class="role">Medical Promotional Officer</div>
-          <p class="lead">
-            Welcome to my personal website. I am Jahangir Alam, based in Assasuni,
-            Satkhira, Bangladesh. This website presents my professional profile,
-            skills and contact information.
-          </p>
-          <div class="buttons">
-            <a class="btn primary" href="#contact">Contact Me</a>
-            <a class="btn secondary" href="#about">View Profile</a>
-          </div>
-        </div>
-        <div class="card profile-card">
-          <div class="avatar">JA</div>
-          <h2>Jahangir Alam</h2>
-          <p>Medical Promotional Officer</p>
-          <p style="margin-top:12px">Assasuni, Satkhira, Bangladesh</p>
-        </div>
-      </div>
+      <nav>
+        <a href="#home" class="logo">Jahangir<span>.</span></a>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-sub">A simple introduction to my professional profile.</p>
-        <div class="about-grid">
-          <div class="card">
-            <h3>Professional Profile</h3>
-            <p style="margin-top:12px;color:#607286">
-              I am Jahangir Alam, a Medical Promotional Officer. I am from
-              Assasuni, Satkhira, Bangladesh. I am interested in professional
-              communication, relationship building and medical promotion.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Personal Information</h3>
-            <ul class="info-list">
-              <li><strong>Name:</strong> Jahangir Alam</li>
-              <li><strong>Upazila:</strong> Assasuni</li>
-              <li><strong>District:</strong> Satkhira</li>
-              <li><strong>Country:</strong> Bangladesh</li>
-              <li><strong>Profession:</strong> Medical Promotional Officer</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
 
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-sub">My professional area of work.</p>
-        <div class="card">
-          <div class="skills">
-            <span class="skill">Medical Promotional Officer</span>
-            <span class="skill">Professional Communication</span>
-            <span class="skill">Relationship Building</span>
-            <span class="skill">Medical Promotion</span>
+        <div>
+          <div class="badge">PROFESSIONAL PROFILE</div>
+
+          <h1>Hello, I'm <span>Jahangir Alam</span></h1>
+
+          <h2>Medical Promotional Officer</h2>
+
+          <p>
+            Welcome to my professional portfolio. I am passionate about
+            professional communication, relationship building and medical promotion.
+          </p>
+
+          <div class="buttons">
+            <a href="#contact" class="btn btn-primary">Contact Me →</a>
+            <a href="#about" class="btn btn-outline">View Profile</a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Contact Me</h2>
-        <p class="section-sub">Feel free to get in touch.</p>
-        <div class="contact-grid">
-          <a class="contact-item" href="mailto:jh233173@gmail.com">
-            <small>Email</small>
-            jh233173@gmail.com
-          </a>
-          <a class="contact-item" href="tel:+8801779933620">
-            <small>Phone</small>
-            +880 1779-933620
-          </a>
-          <a class="contact-item" target="_blank" rel="noopener"
-             href="https://www.facebook.com/share/18xmEQ5X8f/">
-            <small>Facebook</small>
-            Visit my Facebook
-          </a>
+        <div class="profile-card">
+          <div class="avatar">JA</div>
+          <h3>Jahangir Alam</h3>
+          <div class="role">Medical Promotional Officer</div>
+          <div class="location">📍 Assasuni, Satkhira, Bangladesh</div>
         </div>
+
       </div>
-    </section>
+    </div>
   </main>
 
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="section-heading">
+        <small>About Me</small>
+        <h2>Professional Profile</h2>
+        <p>A brief introduction to my professional background and information.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="card">
+          <h3>👋 About Me</h3>
+          <p>
+            I am Jahangir Alam, a Medical Promotional Officer from
+            Assasuni, Satkhira, Bangladesh. I am interested in professional
+            communication, relationship building and medical promotion.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📋 Personal Information</h3>
+
+          <ul class="info-list">
+            <li>
+              <strong>Name</strong>
+              <span>Jahangir Alam</span>
+            </li>
+
+            <li>
+              <strong>Upazila</strong>
+              <span>Assasuni</span>
+            </li>
+
+            <li>
+              <strong>District</strong>
+              <span>Satkhira</span>
+            </li>
+
+            <li>
+              <strong>Country</strong>
+              <span>Bangladesh</span>
+            </li>
+
+            <li>
+              <strong>Profession</strong>
+              <span>Medical Promotional Officer</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <div class="container">
+
+      <div class="section-heading">
+        <small>What I Do</small>
+        <h2>Professional Skills</h2>
+        <p>Key areas of my professional work and expertise.</p>
+      </div>
+
+      <div class="skill-grid">
+
+        <div class="skill-card">
+          <div class="icon">💊</div>
+          <h3>Medical Promotion</h3>
+          <p>Professional promotion and communication related to medical products.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="icon">💬</div>
+          <h3>Communication</h3>
+          <p>Clear and professional communication with people and professionals.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="icon">🤝</div>
+          <h3>Relationship Building</h3>
+          <p>Building and maintaining strong professional relationships.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="icon">📈</div>
+          <h3>Professional Growth</h3>
+          <p>Focused on continuous learning and professional development.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div>
+          <small>GET IN TOUCH</small>
+          <h2>Let's Connect</h2>
+          <p>
+            Feel free to contact me for professional communication
+            or any relevant opportunity.
+          </p>
+        </div>
+
+        <div class="contact-items">
+
+          <div class="contact-item">
+            <span>Email</span>
+            <a href="mailto:jh233173@gmail.com">
+              jh233173@gmail.com
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <span>Phone</span>
+            <a href="tel:+8801779933620">
+              +880 1779-933620
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <span>Facebook</span>
+            <a href="https://www.facebook.com/" target="_blank">
+              Visit My Facebook →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     © 2026 Jahangir Alam. All rights reserved.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+      });
+    });
+  </script>
+
 </body>
 </html>
