@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal profile website of Jahangir Alam, Medical Promotional Officer from Assasuni, Satkhira.">
+  <title>Jahangir Alam | Medical Promotional Officer</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:#102a43;background:#f5f8fc;line-height:1.6
+    }
+    a{text-decoration:none;color:inherit}
+    .nav{
+      position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);
+      backdrop-filter:blur(10px);border-bottom:1px solid #e6edf5
+    }
+    .nav-inner{max-width:1100px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:22px;font-weight:800;color:#087f8c}
+    .menu{display:flex;gap:22px;font-size:14px;font-weight:700;color:#486581}
+    .menu a:hover{color:#087f8c}
+    .hero{
+      min-height:78vh;display:flex;align-items:center;
+      background:linear-gradient(135deg,#e8fbfc 0%,#f7fbff 55%,#eaf1ff 100%);
+    }
+    .container{max-width:1100px;margin:auto;padding:70px 22px}
+    .hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:55px;align-items:center}
+    .badge{display:inline-block;background:#d9f5f5;color:#087f8c;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:18px}
+    h1{font-size:clamp(42px,7vw,72px);line-height:1.05;margin-bottom:18px;letter-spacing:-2px}
+    .role{font-size:24px;color:#087f8c;font-weight:800;margin-bottom:18px}
+    .lead{font-size:18px;color:#52667a;max-width:650px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{padding:13px 20px;border-radius:12px;font-weight:800;display:inline-block}
+    .primary{background:#087f8c;color:white}
+    .secondary{background:white;border:1px solid #c9d6e2;color:#234}
+    .card{
+      background:white;border:1px solid #e3ebf3;border-radius:24px;padding:30px;
+      box-shadow:0 18px 50px rgba(35,55,80,.08)
+    }
+    .profile-card{text-align:center}
+    .avatar{
+      width:150px;height:150px;border-radius:50%;margin:0 auto 18px;
+      display:flex;align-items:center;justify-content:center;
+      background:#087f8c;color:white;font-size:48px;font-weight:800;
+      border:8px solid #e7f8f8
+    }
+    .profile-card h2{font-size:27px;margin-bottom:5px}
+    .profile-card p{color:#6b7c8f}
+    section{padding:20px 0}
+    .section-title{text-align:center;font-size:34px;margin-bottom:12px}
+    .section-sub{text-align:center;color:#6b7c8f;margin-bottom:38px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .info-list{list-style:none;margin-top:15px}
+    .info-list li{padding:12px 0;border-bottom:1px solid #edf1f5}
+    .info-list strong{display:inline-block;min-width:105px}
+    .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .skill{padding:11px 15px;border-radius:12px;background:#eaf7f8;color:#087f8c;font-weight:800}
+    .contact{background:#102a43;color:white}
+    .contact .section-title{color:white}
+    .contact .section-sub{color:#cbd7e2}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .contact-item{background:rgba(255,255,255,.08);padding:22px;border-radius:16px}
+    .contact-item small{display:block;color:#b8c8d7;margin-bottom:5px}
+    footer{text-align:center;padding:24px;color:#708090;background:#fff;font-size:14px}
+    @media(max-width:800px){
+      .menu{display:none}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .container{padding:55px 18px}
+      h1{font-size:48px}
+      .role{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="#home">Jahangir Alam</a>
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="badge">PROFESSIONAL PROFILE</span>
+          <h1>Jahangir Alam</h1>
+          <div class="role">Medical Promotional Officer</div>
+          <p class="lead">
+            Welcome to my personal website. I am Jahangir Alam, based in Assasuni,
+            Satkhira, Bangladesh. This website presents my professional profile,
+            skills and contact information.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="#contact">Contact Me</a>
+            <a class="btn secondary" href="#about">View Profile</a>
+          </div>
+        </div>
+        <div class="card profile-card">
+          <div class="avatar">JA</div>
+          <h2>Jahangir Alam</h2>
+          <p>Medical Promotional Officer</p>
+          <p style="margin-top:12px">Assasuni, Satkhira, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-sub">A simple introduction to my professional profile.</p>
+        <div class="about-grid">
+          <div class="card">
+            <h3>Professional Profile</h3>
+            <p style="margin-top:12px;color:#607286">
+              I am Jahangir Alam, a Medical Promotional Officer. I am from
+              Assasuni, Satkhira, Bangladesh. I am interested in professional
+              communication, relationship building and medical promotion.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Personal Information</h3>
+            <ul class="info-list">
+              <li><strong>Name:</strong> Jahangir Alam</li>
+              <li><strong>Upazila:</strong> Assasuni</li>
+              <li><strong>District:</strong> Satkhira</li>
+              <li><strong>Country:</strong> Bangladesh</li>
+              <li><strong>Profession:</strong> Medical Promotional Officer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-sub">My professional area of work.</p>
+        <div class="card">
+          <div class="skills">
+            <span class="skill">Medical Promotional Officer</span>
+            <span class="skill">Professional Communication</span>
+            <span class="skill">Relationship Building</span>
+            <span class="skill">Medical Promotion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-sub">Feel free to get in touch.</p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:jh233173@gmail.com">
+            <small>Email</small>
+            jh233173@gmail.com
+          </a>
+          <a class="contact-item" href="tel:+8801779933620">
+            <small>Phone</small>
+            +880 1779-933620
+          </a>
+          <a class="contact-item" target="_blank" rel="noopener"
+             href="https://www.facebook.com/share/18xmEQ5X8f/">
+            <small>Facebook</small>
+            Visit my Facebook
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Jahangir Alam. All rights reserved.
+  </footer>
+</body>
+</html>
